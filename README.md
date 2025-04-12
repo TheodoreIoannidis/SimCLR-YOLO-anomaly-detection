@@ -27,12 +27,6 @@ Used as the base detector to:
 - Employed techniques like horizontal/vertical flipping, color jittering, and blurring.
 - Balanced underrepresented classes and improved generalization.
 
-## Results
-
-- Achieved **95% accuracy** on the test set.
-- Demonstrated significant improvements when using SimCLR-pretrained backbones, especially in scenarios with limited labeled data.
-- Efficiently distinguished between Red and White classes using the enhanced YOLOv8 architecture.
-
 ## Dataset
 
 The experiments utilized:
