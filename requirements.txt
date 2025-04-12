@@ -1,0 +1,8 @@
+torch>=2.0.0
+torchmetrics
+pytorch-lightning
+opencv-python
+albumentations
+scikit-learn
+matplotlib
+ultralytics
