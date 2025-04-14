@@ -4,11 +4,11 @@ This repository contains the implementation of my undergraduate thesis titled **
 
 ## Project Overview
 
-Wireless capsule endoscopy (WCE) is a powerful diagnostic tool for small bowel diseases, but it produces tens of thousands of frames per session, making manual review extremely time-consuming. This project aims to automate the detection and categorization of pathological findings in WCE images using the YOLOv8 object detection model, enhanced through self-supervised learning with SimCLR.
+Wireless capsule endoscopy (WCE) is a powerful diagnostic tool for small bowel diseases, but it produces tens of thousands of frames per session, making manual review extremely time-consuming. For this reason, labeling video frames is also extremely time-consuming. This project aims to automate the detection and categorization of pathological findings in WCE images using the YOLOv8 object detection model, enhanced through self-supervised learning with SimCLR. The intuition is that contrastive learning will help improve performance without requiring additional labeled data.
 
 ### Main Objectives:
 - Detect and localize pathological findings in endoscopy frames.
-- Classify detected findings into two visual classes: **Red** and **White**.
+- Classify detected findings into two (Red and White) or multiple visual classes (Erythema, Blood, Angiectasia, etc.).
 - Improve performance using self-supervised learning on unlabeled data with **SimCLR**.
 - Address class imbalance with **data augmentation** techniques.
 
@@ -32,22 +32,20 @@ Used as the base detector to:
 The experiments utilized:
 - **KVASIR Dataset**: Annotated WCE frames.
 - **Rhode Island Gastroenterology Dataset**: Used for SimCLR pretraining (unlabeled frames).
-
 Due to licensing restrictions, datasets are not included in this repository.
 
-
 ## How to Run
-
 1. Clone this repository.
 2. Set up your Python environment (Python ≥ 3.8, PyTorch ≥ 2.0).
 3. Place your dataset in the expected folder structure.
-4. Run the `Yolo_simCLR.ipynb` notebook to:
+4. Write a config.yaml file for ultralytics YOLOv8 trainig
+5. Run the `Yolo_simCLR.ipynb` notebook to:
    - Pretrain with SimCLR.
    - Fine-tune with YOLOv8.
    - Evaluate performance.
+Note: The experiments were run on GPU (NVIDIA A100) on the remote hpc server of AUTh.
 
 ## Requirements
-
 - Python 3.8+
 - PyTorch
 - OpenCV
@@ -61,8 +59,7 @@ Due to licensing restrictions, datasets are not included in this repository.
 
 **Theodoros Ioannidis**  
 Aristotle University of Thessaloniki  
-Electrical and Computer Engineering Department
+Electrical and Computer Engineering 
 
 ## License
-
 This project is for academic and research purposes. For dataset licensing, please refer to the official sources.
